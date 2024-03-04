@@ -9,15 +9,16 @@ console.log("exercice 6");
 
 // 3. nous devons maintenant récupérer les valeurs des champs email et mot de passe dans la fonction déclenchée par l'événement (et donc appelée) déclarée à la question précédente. 
 // Ecrivez du code jQuery permettant de récupérer la valeur de ces inputs. Affichez ces valeurs dans la console dans un premier temps.
-let email=$('#email').val()
-let passwd=$('#password').val()
-const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+// const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // $('body > div > form > button').click(
     
 //     function(){
+//         let email=$('#email').val()
+//         let passwd=$('#password').val()
+//         console.log( "info : ", email + "  " + passwd)
         
-//         console.log( email + "  " + passwd)
 //     }
 // )
 
@@ -28,15 +29,17 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\
 // [`alert alert-warning`](https://getbootstrap.com/docs/3.4/components/#alerts) en précisant dedans le texte email obligatoire
 
 
-// $('body > div > form > button').click(
+$('body > div > form > button').click(
     
-//     function(){
-//         if (email === "") {
-//             $('#email').after('<div class="alert alert-warning" role="alert">email obligatoire</div>')
-//             return;
-//         }
-//     }
-// )
+    function(){
+        const email=$('#email').val()
+        console.log("email", email)
+        if (email === "") {
+            $('#email').after('<div class="alert alert-warning" role="alert">email obligatoire</div>')
+            return;
+        }
+    }
+)
 
 
 
@@ -90,16 +93,16 @@ const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\
 // 5. Maintenant faites en sorte que si l'utilisateur rentre 'hello@me.com' dans l'email et 'secret8' dans le mot de passe alors un message de confirmation 
 // apparait : **'Vous êtes connecté'**
 
-let email_valide = 'hello@me.com'
-let passwd_valide = 'secret8'
+// let email_valide = 'hello@me.com'
+// let passwd_valide = 'secret8'
 
-$('body > div > form > button').click(
+// $('body > div > form > button').click(
     
-    function(){
+//     function(){
 
-        if (!emailRegex.test(email)) {
-            $('#email').after('<div class="alert alert-warning" role="alert">email non valide</div>')
-            return;
-        }
-    }
-)
+//         if (!emailRegex.test(email)) {
+//             $('#email').after('<div class="alert alert-warning" role="alert">email non valide</div>')
+//             return;
+//         }
+//     }
+// )

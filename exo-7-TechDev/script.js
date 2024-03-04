@@ -30,16 +30,63 @@ $('body > div > table').html(
 // [append](http://api.jquery.com/append/) de jQuery devrait vous aider ;
 
 
- // Loop through the data
-//  for (const person of data) {
-//   // Extract email and name
+// function addLineToTable(obj){
+
+//     const newRow = $('<tr>');
+//     const email = person.email;
+//     const nom = person.name.last;
+//     const prenom = person.name.first;
+//     const telephone = person.phone;
+  
+//     newRow.append($('<td>').text(email));
+//     newRow.append($('<td>').text(nom));
+//     newRow.append($('<td>').text(prenom));
+//     newRow.append($('<td>').text(telephone));
+
+//     return tab.append(newRow);
+// }
+
+
+// for (const person of data) {
+  
+//   $('body > div > table').addLineToTable(person);
+
+// }
+
+
+ for (const person of data) {
+  // Extract email and name
+  const email = person.email;
+  const nom = person.name.last;
+  const prenom = person.name.first;
+  const telephone = person.phone;
+
+  // Create a new table row
+  // const newRow = $('<tr>');
+
+  // // Create and append cells for email and name
+  // newRow.append($('<td>').text(email));
+  // newRow.append($('<td>').text(nom));
+  // newRow.append($('<td>').text(prenom));
+  // newRow.append($('<td>').text(telephone));
+const newRowToAdd = createLine(email,nom,prenom,telephone);
+console.log(newRowToAdd)
+  // Append the row to the table body
+  $('body > div > table').append(newRowToAdd);
+
+}
+
+// function addLineToTable(newRow){
+//     // Extract email and name
+//   for(person in obj) {
 //   const email = person.email;
 //   const nom = person.name.last;
 //   const prenom = person.name.first;
 //   const telephone = person.phone;
+  
 
-//   // Create a new table row
-//   const newRow = $('<tr>');
+//   // newRow = $('<tr>');
+
 
 //   // Create and append cells for email and name
 //   newRow.append($('<td>').text(email));
@@ -47,17 +94,19 @@ $('body > div > table').html(
 //   newRow.append($('<td>').text(prenom));
 //   newRow.append($('<td>').text(telephone));
 
-//   // Append the row to the table body
-//   $('body > div > table').append(newRow);
+//   return newRow;
+//   }
+//   return newRow;
+// }
+// for (const person of data) {
+  
+//   $('body > div > table').addLineToTable($('<tr>'));
+
 // }
 
-function addLineToTable(obj){
-    // Extract email and name
-  const email = obj.email;
-  const nom = obj.name.last;
-  const prenom = obj.name.first;
-  const telephone = obj.phone;
+// 3. parcourir le tableau des données et pour chaque élément du tableau, ajoutez une ligne dans votre table en appelant la fonction précédemment créée.
 
+function createLine(email,nom,prenom,telephone){
   const newRow = $('<tr>');
 
   // Create and append cells for email and name
@@ -65,10 +114,5 @@ function addLineToTable(obj){
   newRow.append($('<td>').text(nom));
   newRow.append($('<td>').text(prenom));
   newRow.append($('<td>').text(telephone));
-
+  return newRow;
 }
-
-
-// 3. parcourir le tableau des données et pour chaque élément du tableau, ajoutez une ligne dans votre table en appelant la fonction précédemment créée.
-
-
